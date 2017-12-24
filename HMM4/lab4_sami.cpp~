@@ -1,0 +1,39 @@
+#include <iostream>
+#include <fstream>
+#include <stdlib.h> // atof
+#include <stdio.h> // printf, fgets
+#include <sstream> // stringstream
+
+using namespace std;
+
+int main(){
+    std::ifstream infile; 
+    infile.open("sample_00.in");
+    
+    if(infile.is_open()){
+        std::string line;
+        getline(infile, line);
+        std::stringstream smurf(line);
+        
+        std::cout << line << std::endl;
+        
+        int m,n;
+        smurf >> m >> n;
+        std::cout << m << "x" << n;
+        
+        double **A = new double *[m];
+
+        for (int i = 0; i < m; ++i) {
+            A[i] = new double[n];
+        }
+        
+        for (int i = 0; i < m; ++i){
+            for(int j = 0; j < n; ++j){
+               smurf >> A[i][j];
+            }
+        }
+    }
+    else{
+        std::cout << "Fail not open" << std::endl;
+    }
+}
