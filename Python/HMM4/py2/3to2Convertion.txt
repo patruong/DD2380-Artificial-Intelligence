@@ -1,0 +1,6 @@
+cmd command:
+
+py -3 3to2 -w lab4_func.py
+
+in dir:
+C:\Users\Patrick\AppData\Local\Programs\Python\Python35\Scripts
